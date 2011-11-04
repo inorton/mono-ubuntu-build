@@ -9,6 +9,8 @@ for fetch in $ARCHIVE_DIR/*.get
 do
 	source $fetch
 
+	set +e
+
 	if [ "x" != "x$SKIP_FETCH" ]; then
 		echo "Skip fetching $ARCHIVE"
 	else
@@ -16,6 +18,9 @@ do
 		./fetch_archive
 	fi
 
+	set -e
+
+ 	$BUILD_TOOL_PATH/build_archive	
 
 
 done

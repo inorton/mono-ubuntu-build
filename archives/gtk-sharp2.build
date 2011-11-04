@@ -1,5 +1,5 @@
 tar -xf $ARCHIVE_DIR/$ARCHIVE
-cd libgdiplus-2.10
+cd gtk-sharp-2.12.11
 ./configure --prefix=$MONO_PREFIX
 make
 sudo make install
