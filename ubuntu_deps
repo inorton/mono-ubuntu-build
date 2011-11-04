@@ -1,0 +1,2 @@
+sudo apt-get install autoconf libc6-dev gcc g++
+sudo apt-get install libgtk2.0-dev

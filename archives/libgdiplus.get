@@ -1,0 +1,2 @@
+ARCHIVE=libgdiplus-2.10.tar.bz2
+URL=http://download.mono-project.com/sources/libgdiplus/$ARCHIVE 

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+export SOURCE_DIR="$HOME/sources"
+export ARCHIVE_DIR="$HOME/archives"
+
+for fetch in $ARCHIVE_DIR/*.get
+do
+	source $fetch
+	echo "Fetch $ARCHIVE"
+	./fetch_archive
+	echo "Fetched $ARCHIVE"
+done
+

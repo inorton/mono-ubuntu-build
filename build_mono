@@ -1,11 +1,29 @@
 #!/bin/bash
 
+set -e
+
 if [ "x" == "x$MONO_PREFIX" ]; then
 	echo "MONO_PREFIX is not set"
 	exit 1
 fi
 
+export BUILD_TOOL_PATH=$HOME
 
 export CONFIG_SITE="$HOME/config.site"
 echo -n '"$prefix" = NONE && prefix=' > $CONFIG_SITE
 echo $MONO_PREFIX >> $CONFIG_SITE
+
+if [ "x" == "x$MONO_SKIP_SOURCES" ]; then
+
+	echo "fetching sources."
+	echo ".. this may take some time .. "
+
+	$BUILD_TOOL_PATH/fetch_sources
+
+else
+	echo "skip fetching sources, looking in $HOME/archives for sources"
+fi
+
+for build in "$HOME/archives/*.build" do
+	echo "running $build"
+done
