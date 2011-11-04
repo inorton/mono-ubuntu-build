@@ -7,6 +7,8 @@ if [ "x" == "x$MONO_PREFIX" ]; then
 	exit 1
 fi
 
+source mono_env $MONO_PREFIX
+
 export BUILD_TOOL_PATH=$HOME
 export SOURCE_DIR="$HOME/sources"
 export ARCHIVE_DIR="$HOME/archives"
