@@ -8,22 +8,12 @@ if [ "x" == "x$MONO_PREFIX" ]; then
 fi
 
 export BUILD_TOOL_PATH=$HOME
+export SOURCE_DIR="$HOME/sources"
+export ARCHIVE_DIR="$HOME/archives"
 
 export CONFIG_SITE="$HOME/config.site"
 echo -n '"$prefix" = NONE && prefix=' > $CONFIG_SITE
 echo $MONO_PREFIX >> $CONFIG_SITE
 
-if [ "x" == "x$MONO_SKIP_SOURCES" ]; then
+$BUILD_TOOL_PATH/build_sources
 
-	echo "fetching sources."
-	echo ".. this may take some time .. "
-
-	$BUILD_TOOL_PATH/fetch_sources
-
-else
-	echo "skip fetching sources, looking in $HOME/archives for sources"
-fi
-
-for build in "$HOME/archives/*.build" do
-	echo "running $build"
-done

@@ -1,4 +1,4 @@
 set +e
-wget -nc $URL -O $ARCHIVE_DIR/$ARCHIVE
+wget -nc $URL -O "$ARCHIVE_DIR/$ARCHIVE"
 set -e
 

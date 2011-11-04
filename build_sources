@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+echo "ARCHIVE_DIR=$ARCHIVE_DIR"
+echo "SOURCE_DIR=$SOURCE_DIR"
+
+for fetch in $ARCHIVE_DIR/*.get
+do
+	source $fetch
+
+	if [ "x" != "x$SKIP_FETCH" ]; then
+		echo "Skip fetching $ARCHIVE"
+	else
+		echo "Fetch $ARCHIVE .. "
+		./fetch_archive
+	fi
+
+
+
+done
+
