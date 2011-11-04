@@ -1,0 +1,2 @@
+ARCHIVE=gtk-sharp-2.12.11.tar.bz2
+URL=http://download.mono-project.com/sources/gtk-sharp212/$ARCHIVE
