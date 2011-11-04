@@ -1,0 +1,30 @@
+#!/bin/bash
+
+MONO_PREFIX=$1
+
+set -e
+
+if [ ! -e "/$MONO_PREFIX/bin/mono" ]; then
+
+   echo "Usage: $0 MONO_PREFIX_PATH"
+   echo
+
+   if [ "/" != "/$MONO_PREFIX" ]; then
+   	echo "MONO_PREFIX '$MONO_PREFIX' does not exist"
+   fi
+   exit 1;
+
+fi
+
+
+export MONO_PREFIX=$1
+export PATH=$MONO_PREFIX/bin:$PATH
+export LD_LIBRARY_PATH=$MONO_PREFIX/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$MONO_PREFIX/lib/pkgconfig
+export C_INCLUDE_PATH=$MONO_PREFIX/include
+export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
+
+## if you want to not pick up things from the distro's GAC
+## you might like to uncomment these
+# export MONO_GAC_PREFIX=$MONO_PREFIX
+

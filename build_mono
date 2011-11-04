@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "x" == "x$MONO_PREFIX" ]; then
+	echo "MONO_PREFIX is not set"
+	exit 1
+fi
+
+
+export CONFIG_SITE="$HOME/config.site"
+echo -n '"$prefix" = NONE && prefix=' > $CONFIG_SITE
+echo $MONO_PREFIX >> $CONFIG_SITE
