@@ -1,0 +1,5 @@
+tar -xf $ARCHIVE_DIR/$ARCHIVE
+cd mono-addins-0.6.2
+./configure --prefix=$MONO_PREFIX
+make
+sudo make install

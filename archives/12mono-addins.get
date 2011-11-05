@@ -1,0 +1,3 @@
+export URL=http://download.mono-project.com/sources/mono-addins/mono-addins-0.6.2.tar.bz2
+export ARCHIVE=mono-addins-0.6.2.tar.bz2
+export BUILD=mono-addins.build
