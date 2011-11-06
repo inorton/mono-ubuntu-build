@@ -7,6 +7,9 @@ if [ "x" == "x$MONO_PREFIX" ]; then
 	exit 1
 fi
 
+echo "create $MONO_PREFIX"
+sudo mkdir -p $MONO_PREFIX
+
 source mono_env $MONO_PREFIX
 
 export BUILD_TOOL_PATH=$HOME

@@ -4,7 +4,7 @@ MONO_PREFIX=$1
 
 set -e
 
-if [ ! -e "/$MONO_PREFIX/bin/mono" ]; then
+if [ ! -d "$MONO_PREFIX" ]; then
 
    echo "Usage: $0 MONO_PREFIX_PATH"
    echo
