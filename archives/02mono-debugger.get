@@ -1,0 +1,3 @@
+export ARCHIVE=mono-debugger-2.10.tar.bz2
+export URL=http://download.mono-project.com/sources/mono-debugger/mono-debugger-2.10.tar.bz2
+export BUILD=mono-debugger.build

@@ -1,0 +1,3 @@
+export ARCHIVE=gnome-sharp-2.24.1.tar.bz2
+export URL=http://download.mono-project.com/sources/gnome-sharp2/gnome-sharp-2.24.1.tar.bz2
+export BUILD=gnome-sharp.build

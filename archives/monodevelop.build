@@ -1,0 +1,5 @@
+tar -xf $ARCHIVE_DIR/$ARCHIVE
+cd monodevelop-2.8.2
+./configure --prefix=$MONO_PREFIX
+make
+sudo make install

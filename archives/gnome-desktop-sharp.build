@@ -1,0 +1,5 @@
+tar -xf $ARCHIVE_DIR/$ARCHIVE
+cd gnome-sharp-2.24.1
+./configure --prefix=$MONO_PREFIX
+make
+sudo make install

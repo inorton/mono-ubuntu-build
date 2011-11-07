@@ -1,0 +1,3 @@
+export ARCHIVE=gnome-desktop-sharp-2.24.0.tar.bz2
+export URL=http://download.mono-project.com/sources/gnome-desktop-sharp2/gnome-desktop-sharp-2.24.0.tar.bz2
+export BUILD=gnome-desktop-sharp.build
