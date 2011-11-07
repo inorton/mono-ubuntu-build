@@ -1,5 +1,11 @@
-sudo apt-get install autoconf libc6-dev gcc g++
-sudo apt-get install libgtk2.0-dev libjpeg62-dev 
-apt-get install libgnome-desktop-dev
-apt-get install libwnck-dev
-apt-get install libglade2-dev libglademm-2.4-dev
+sudo apt-get install \
+autoconf \
+libc6-dev \
+gcc \
+g++ \
+libgtk2.0-dev \
+libjpeg62-dev \
+libgnome-desktop-dev \
+libwnck-dev \
+libglade2-dev \
+libglademm-2.4-dev
