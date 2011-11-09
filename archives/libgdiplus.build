@@ -2,4 +2,14 @@ tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd libgdiplus-2.10
 ./configure --prefix=$MONO_PREFIX
 make
-sudo make install
+
+sudo checkinstall -D \
+  --fstrans=no \
+  --pkgname pmono-libgdiplus \
+  --pkgaltsource $URL \
+  --pkgversion 2.10 \
+  --maintainer "Ian Norton" \
+  --requires "libjpeg62, libpng12-0" \
+  --default \
+  --pakdir $ARCHIVE_DIR \
+  make install

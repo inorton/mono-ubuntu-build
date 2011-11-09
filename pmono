@@ -1,0 +1,32 @@
+#!/bin/bash
+
+MONO_PREFIX=/opt/mono
+
+set -e
+
+if [ ! -d "$MONO_PREFIX" ]; then
+
+   echo "Usage: $0 COMMAND"
+   echo
+   echo "Execute COMMAND in the parallel mono environment in $MONO_PREFIX"
+
+   if [ "/" != "/$MONO_PREFIX" ]; then
+   	echo "MONO_PREFIX '$MONO_PREFIX' does not exist"
+   fi
+   exit 1;
+
+fi
+
+
+export MONO_PREFIX
+export PATH=$MONO_PREFIX/bin:$PATH
+export LD_LIBRARY_PATH=$MONO_PREFIX/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$MONO_PREFIX/lib/pkgconfig
+export C_INCLUDE_PATH=$MONO_PREFIX/include
+export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
+
+## if you want to not pick up things from the distro's GAC
+## you might like to uncomment these
+# export MONO_GAC_PREFIX=$MONO_PREFIX
+
+exec $1

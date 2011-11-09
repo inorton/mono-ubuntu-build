@@ -3,8 +3,8 @@ autoconf \
 libc6-dev \
 gcc \
 g++ \
-libgtk2.0-dev \
 libjpeg62-dev \
+libgtk2.0-dev \
 libgnome-desktop-dev \
 libwnck-dev \
 libglade2-dev \

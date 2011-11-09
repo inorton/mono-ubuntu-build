@@ -1,0 +1,7 @@
+sudo apt-get install \
+checkinstall \
+autoconf \
+libc6-dev \
+gcc \
+g++ \
+libjpeg62-dev 
