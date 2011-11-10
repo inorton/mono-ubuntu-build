@@ -25,8 +25,8 @@ export PKG_CONFIG_PATH=$MONO_PREFIX/lib/pkgconfig
 export C_INCLUDE_PATH=$MONO_PREFIX/include
 export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
 
-## if you want to not pick up things from the distro's GAC
-## you might like to uncomment these
-# export MONO_GAC_PREFIX=$MONO_PREFIX
+## if you want to pick up things from the distro's GAC
+## you might like to comment these
+export MONO_GAC_PREFIX=$MONO_PREFIX
 
 exec $1

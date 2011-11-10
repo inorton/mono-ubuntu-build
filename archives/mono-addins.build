@@ -1,5 +1,18 @@
-tar -xf $ARCHIVE_DIR/$ARCHIVE
+#!/bin/bash
+set -e
+tar -xf "$ARCHIVE_DIR/$ARCHIVE"
 cd mono-addins-0.6.2
 ./configure --prefix=$MONO_PREFIX
-make
-sudo make install
+
+make && sudo checkinstall -D \
+  --fstrans=yes \
+  --exclude=$HOME/.ccache \
+  --pkgname pmono-mono-addins \
+  --pkgaltsource "$URL" \
+  --pkgversion 0.6.2 \
+  --maintainer "Ian Norton" \
+  --requires pmono-mono,pmono-gtk-sharp2,pmono-mono-tools \
+  --default \
+  --pakdir "$ARCHIVE_DIR" 
+
+set +e

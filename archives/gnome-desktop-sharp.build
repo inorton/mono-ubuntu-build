@@ -1,5 +1,16 @@
 tar -xf $ARCHIVE_DIR/$ARCHIVE
-cd gnome-sharp-2.24.1
+cd gnome-desktop-sharp-2.24.0
 ./configure --prefix=$MONO_PREFIX
 make
-sudo make install
+
+sudo checkinstall -D \
+  --fstrans=no \
+  --exclude=$HOME/.ccache \
+  --pkgname pmono-gnome-desktop-sharp2 \
+  --pkgaltsource $URL \
+  --pkgversion 2.24.0 \
+  --maintainer "Ian Norton" \
+  --requires pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev \
+  --default \
+  --pakdir $ARCHIVE_DIR \
+  make install

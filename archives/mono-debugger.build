@@ -5,6 +5,7 @@ make
 
 sudo checkinstall -D \
   --fstrans=no \
+  --exclude=$HOME/.ccache \
   --pkgname pmono-mono-debugger \
   --pkgaltsource $URL \
   --pkgversion 2.10 \

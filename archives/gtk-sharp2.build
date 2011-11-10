@@ -2,4 +2,15 @@ tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd gtk-sharp-2.12.11
 ./configure --prefix=$MONO_PREFIX
 make
-sudo make install
+
+sudo checkinstall -D \
+  --fstrans=no \
+  --exclude=$HOME/.ccache \
+  --pkgname pmono-gtk-sharp2 \
+  --pkgaltsource $URL \
+  --pkgversion 2.12.11 \
+  --maintainer "Ian Norton" \
+  --requires pmono-mono,libgtk2.0-dev \
+  --default \
+  --pakdir $ARCHIVE_DIR \
+  make install

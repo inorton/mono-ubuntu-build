@@ -15,12 +15,12 @@ do
 		echo "Skip fetching $ARCHIVE"
 	else
 		echo "Fetch $ARCHIVE .. "
-		$BUILD_TOOL_PATH/fetch_archive
+		bash $BUILD_TOOL_PATH/fetch_archive
 	fi
 
 	set -e
 
- 	$BUILD_TOOL_PATH/build_archive	
+ 	bash $BUILD_TOOL_PATH/build_archive	
 
 done
 

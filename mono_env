@@ -26,5 +26,5 @@ export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
 
 ## if you want to not pick up things from the distro's GAC
 ## you might like to uncomment these
-# export MONO_GAC_PREFIX=$MONO_PREFIX
+export MONO_GAC_PREFIX=$MONO_PREFIX
 
