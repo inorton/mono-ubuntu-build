@@ -1,5 +1,7 @@
 tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd gnome-sharp-2.24.1
+patch -p1 < ../gnome-sharp-2.24.1.patch
+
 ./configure --prefix=$MONO_PREFIX
 make
 

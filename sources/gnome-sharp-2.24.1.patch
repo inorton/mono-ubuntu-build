@@ -1,0 +1,19 @@
+*** gnome-sharp-2.24.1/Makefile.in	2012-01-02 21:21:58.000000000 +0000
+--- gnome-sharp-2.24.1-patch/Makefile.in	2012-01-02 21:22:54.000000000 +0000
+***************
+*** 227,233 ****
+  top_build_prefix = @top_build_prefix@
+  top_builddir = @top_builddir@
+  top_srcdir = @top_srcdir@
+! SUBDIRS = sources art gnomevfs gnome gconf sample 
+  EXTRA_DIST = \
+  	gtk-sharp.snk		\
+  	gapi-cdecl-insert	\
+--- 227,233 ----
+  top_build_prefix = @top_build_prefix@
+  top_builddir = @top_builddir@
+  top_srcdir = @top_srcdir@
+! SUBDIRS = sources art gnomevfs gnome gconf 
+  EXTRA_DIST = \
+  	gtk-sharp.snk		\
+  	gapi-cdecl-insert	\
