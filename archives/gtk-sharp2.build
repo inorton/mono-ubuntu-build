@@ -1,16 +1,15 @@
+#!/bin/bash
+set -e
+
 tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd gtk-sharp-2.12.11
 ./configure --prefix=$MONO_PREFIX
 make
 
-sudo checkinstall -D \
-  --fstrans=no \
-  --exclude=$HOME/.ccache \
-  --pkgname pmono-gtk-sharp2 \
-  --pkgaltsource $URL \
-  --pkgversion 2.12.11 \
-  --maintainer "Ian Norton" \
-  --requires pmono-mono,libgtk2.0-dev \
-  --default \
-  --pakdir $ARCHIVE_DIR \
-  make install
+PNAME=pmono-gtk-sharp2
+PVERS=2.12.11
+PDEPS=pmono-mono,libgtk2.0-dev
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e

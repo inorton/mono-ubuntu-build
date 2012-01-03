@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd gnome-sharp-2.24.1
 patch -p1 < ../gnome-sharp-2.24.1.patch
@@ -5,14 +8,10 @@ patch -p1 < ../gnome-sharp-2.24.1.patch
 ./configure --prefix=$MONO_PREFIX
 make
 
-sudo checkinstall -D \
-  --fstrans=no \
-  --exclude=$HOME/.ccache \
-  --pkgname pmono-gnome-sharp2 \
-  --pkgaltsource $URL \
-  --pkgversion 2.24.1 \
-  --maintainer "Ian Norton" \
-  --requires pmono-mono,pmono-gtk-sharp2,libgnome2-dev,libgnomevfs2-dev,libgnomecanvas2-dev,libatk1.0-dev,libgnomeui-dev \
-  --default \
-  --pakdir $ARCHIVE_DIR \
-  make install
+PNAME=pmono-gnome-sharp2
+PVERS=2.24.1
+PDEPS=pmono-mono,pmono-gtk-sharp2,libgnome2-dev,libgnomevfs2-dev,libgnomecanvas2-dev,libatk1.0-dev,libgnomeui-dev
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e

@@ -1,5 +1,15 @@
+#!/bin/bash
+set -e
+
 tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd monodevelop-2.8.2
 ./configure --prefix=$MONO_PREFIX
 make
-sudo make install
+
+PNAME=pmono-monodevelop
+PVERS=2.8.2
+PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev,pmono-gnome-desktop-sharp2
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e

@@ -1,16 +1,15 @@
+#!/bin/bash
+set -e
+
 tar -xf $ARCHIVE_DIR/$ARCHIVE
 cd mono-2.10.6
 ./configure --prefix=$MONO_PREFIX
 make
 
-sudo checkinstall -D \
-  --fstrans=no \
-  --exclude=$HOME/.ccache \
-  --pkgname pmono-mono \
-  --pkgaltsource $URL \
-  --pkgversion 2.10.6 \
-  --maintainer "Ian Norton" \
-  --requires pmono-libgdiplus \
-  --default \
-  --pakdir $ARCHIVE_DIR \
-  make install
+PNAME=pmono-mono
+PVERS=2.10.6
+PDEPS=pmono-libgdiplus
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e

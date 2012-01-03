@@ -3,16 +3,12 @@ set -e
 tar -xf "$ARCHIVE_DIR/$ARCHIVE"
 cd mono-tools-2.10
 ./configure --prefix=$MONO_PREFIX
+make
 
-make && sudo checkinstall -D \
-  --fstrans=yes \
-  --exclude=$HOME/.ccache \
-  --pkgname pmono-mono-tools \
-  --pkgaltsource "$URL" \
-  --pkgversion 2.10 \
-  --maintainer "Ian Norton" \
-  --requires pmono-mono,pmono-gtk-sharp2 \
-  --default \
-  --pakdir "$ARCHIVE_DIR" 
+PNAME=pmono-mono-tools
+PVERS=2.10
+PDEPS=pmono-mono,pmono-gtk-sharp2
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
 
 set +e

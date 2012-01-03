@@ -1,0 +1,38 @@
+#!/bin/bash
+
+function pmono_deb {
+
+ PNAME=$1
+ PVERS=$2
+ PDEPS=$3
+ PMAINT=$4
+ PURL=$5
+ PREFIX=$MONO_PREFIX
+ OUTDIR=$ARCHIVE_DIR
+ EXCLUDE=$GLOBAL_EXCLUDE
+
+ CMD=`echo checkinstall -D \
+  --fstrans=no \
+  --exclude="$EXCLUDE" \
+  --pkgname $PNAME \
+  --pkgaltsource $PURL \
+  --pkgversion $PVERS \
+  --pkgrelease $GLOBAL_RELEASE_NUMBER \
+  --maintainer "$PMAINT" \
+  --requires "$PDEPS" \
+  --default \
+  --pakdir $OUTDIR \
+  --docdir $PREFIX \
+ make install`
+
+ echo "****"
+ echo running $CMD
+ echo "****"
+
+ sleep 1
+
+ sudo -E $CMD
+
+}
+
+pmono_deb $@

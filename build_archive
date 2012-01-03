@@ -8,7 +8,7 @@ cd $SOURCE_DIR
 
 echo "build $ARCHIVE"
 
-sh $ARCHIVE_DIR/$BUILD
+bash $ARCHIVE_DIR/$BUILD
 
 cd $STD
 

@@ -16,5 +16,10 @@ export BUILD_TOOL_PATH=$HOME
 export SOURCE_DIR="$HOME/sources"
 export ARCHIVE_DIR="$HOME/archives"
 
+
+export GLOBAL_MAINTAINER="Ian Norton"
+export GLOBAL_EXCLUDE="$HOME,$HOME/.ccache,/opt/mono/share/icons/hicolor/icon-theme.cache"
+export GLOBAL_RELEASE_NUMBER=2
+
 $BUILD_TOOL_PATH/build_sources
 
