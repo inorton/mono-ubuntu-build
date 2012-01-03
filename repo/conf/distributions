@@ -1,0 +1,7 @@
+Origin: The internet
+Label: Parallel Mono 
+Codename: oneiric
+Architectures: i386
+Version: 11.10
+Components: main
+Description: Parallel mono packages for Ubuntu

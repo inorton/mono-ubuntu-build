@@ -1,0 +1,15 @@
+Build everything:
+
+$ source mono_env /opt/mono
+$ bash build_mono
+
+
+Create a repository:
+
+$ bash publish_repo
+
+
+Using pmono:
+
+$ source mono_env /opt/mono
+$ mono --version

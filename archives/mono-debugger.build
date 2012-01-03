@@ -7,7 +7,7 @@ cd mono-debugger-2.10
 make
 
 PNAME=pmono-mono-debugger
-PVERS=0.6.2
+PVERS=2.10
 PDEPS=pmono-mono
 
 ../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
