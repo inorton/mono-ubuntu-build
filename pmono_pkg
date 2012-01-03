@@ -5,7 +5,7 @@ function pmono_deb {
  PNAME=$1
  PVERS=$2
  PDEPS=$3
- PMAINT=$4
+ PMAINT="$4"
  PURL=$5
  PREFIX=$MONO_PREFIX
  OUTDIR=$ARCHIVE_DIR
