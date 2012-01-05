@@ -1,7 +1,10 @@
 #!/bin/bash
 
 cd repo
+mkdir -p pmono
+find ../archives/ -name '*.deb' -type f -exec mv '{}' pmono/.;
 
-find ../archives -name '*.deb' -type f -exec reprepro includedeb oneiric '{}' \;
+dpkg-scanpackages . /dev/null |gzip -9c > Packages.gz
+
 
 
