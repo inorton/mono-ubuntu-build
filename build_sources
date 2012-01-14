@@ -2,6 +2,12 @@
 
 set -e
 
+if [ "x" == "x$ARCHIVE_DIR" ] 
+then
+   echo "run build_mono first"
+   exit
+fi
+
 echo "ARCHIVE_DIR=$ARCHIVE_DIR"
 echo "SOURCE_DIR=$SOURCE_DIR"
 

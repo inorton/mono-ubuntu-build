@@ -7,7 +7,7 @@ make
 
 PNAME=pmono-mono-tools
 PVERS=2.10
-PDEPS=pmono-mono,pmono-gtk-sharp2
+PDEPS=pmono-mono,pmono-gtk-sharp2,gnome-desktop-sharp2
 
 ../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
 
