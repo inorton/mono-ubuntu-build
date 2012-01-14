@@ -1,0 +1,4 @@
+export URL=http://github.com/inorton
+
+export ARCHIVE=pmono wrapper script
+export BUILD=scripts.build

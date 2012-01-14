@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+cd ../sources/scripts
+
+PNAME=pmono-scripts
+PVERS=0.0.1
+PDEPS=pmono-mono
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e
