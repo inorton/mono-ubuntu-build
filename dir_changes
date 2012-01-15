@@ -1,0 +1,75 @@
+#!/usr/bin/perl
+
+use File::Find;
+use File::stat;
+use Time::localtime;
+
+my %times = ();
+my @new_files = ();
+my @changed_files = ();
+
+sub add_to_tar {
+	my $tarfile = shift;
+	my $file = shift;
+	ensure_run("tar","--no-recursion","-pscazf",$tarfile, $file );
+}
+
+sub new_file {
+	my $fn = shift;
+	my $timestamp = shift;
+	push @new_files, $fn;
+	$times{$fn} = $timestamp;
+}
+
+sub modified_file {
+	my $fn = shift;
+	push @changed_files, $fn;
+}
+
+sub process_file {
+	my $fn = $File::Find::name;
+	my $time = ctime(stat($fn)->mtime);
+	if ( exists $times{$fn} ){
+		if ( $times{$fn} ne $time ){
+			modified_file($fn);
+		}
+	} else {
+		new_file($fn,$time);
+	}
+}
+
+sub ensure_run {
+	my $cmd = join(" ",@_);
+	my $rv = system(@_) / 256;
+	if ( $rv != 0 ){
+		die "command [$cmd] returned $rv\n";
+	}
+}
+
+my @args = @ARGV;
+my $dir = shift @args;
+my $tarfile = shift @args;
+my @cmd = @args;
+
+if ( $dir =~ /^-h|^--help/ ){
+	die "Usage: $0 TARGETDIR TARFILE COMMAND..\n";
+}
+
+find(\&process_file, $dir );
+
+@new_files = ();
+@changed_files = ();
+
+ensure_run(@cmd);
+
+find(\&process_file, $dir );
+
+foreach my $fn ( sort @new_files ) {
+	print "NEW $fn\n";
+	add_to_tar($tarfile,$fn);
+}
+
+foreach my $fn ( sort @changed_files ) {
+	print "MOD $fn\n";
+	add_to_tar($tarfile,$fn);
+}

@@ -17,9 +17,9 @@ export SOURCE_DIR="$HOME/sources"
 export ARCHIVE_DIR="$HOME/archives"
 
 
-export GLOBAL_MAINTAINER="Ian Norton"
+export GLOBAL_MAINTAINER='Ian Norton <inorton@gmail.com>'
 export GLOBAL_EXCLUDE="$HOME,$HOME/.ccache,/opt/mono/share/icons/hicolor/icon-theme.cache"
-export GLOBAL_RELEASE_NUMBER=2
+export GLOBAL_RELEASE_NUMBER=3
 
 $BUILD_TOOL_PATH/build_sources
 

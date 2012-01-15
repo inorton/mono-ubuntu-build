@@ -1,37 +1,57 @@
 #!/bin/bash
 
+set -e
+
 function pmono_deb {
 
  PNAME=$1
  PVERS=$2
  PDEPS=$3
- PMAINT="$4"
+ PMAINT="$4" ## this doesnt work..
  PURL=$5
  PREFIX=$MONO_PREFIX
  OUTDIR=$ARCHIVE_DIR
  EXCLUDE=$GLOBAL_EXCLUDE
 
- CMD=`echo checkinstall -D \
-  --fstrans=no \
-  --exclude="$EXCLUDE" \
-  --pkgname $PNAME \
-  --pkgaltsource $PURL \
-  --pkgversion $PVERS \
-  --pkgrelease $GLOBAL_RELEASE_NUMBER \
-  --maintainer "$PMAINT" \
-  --requires "$PDEPS" \
-  --default \
-  --pakdir $OUTDIR \
-  --docdir $PREFIX \
- make install`
+ ARCH=`dpkg-architecture -qDEB_HOST_ARCH`
 
- echo "****"
- echo running $CMD
- echo "****"
+ rm -rf ~/tmp/pmono_pkg/
+ mkdir -p ~/tmp/pmono_pkg/
 
- sleep 1
+ BEFORESIZE=`du -s -m $MONO_PREFIX|cut -d \/ -f 1`
 
- sudo -E $CMD
+ perl ~/dir_changes $MONO_PREFIX ~/tmp/pmono_pkg/data.tar.gz sudo -E make install
+
+ AFTERSIZE=`du -s -m $MONO_PREFIX|cut -d \/ -f 1`
+
+ SIZE=$(($AFTERSIZE-$BEFORESIZE))
+
+ pushd ~/tmp/pmono_pkg
+
+ echo "Package: $PNAME" > control
+ echo "Version: $PVERS-$GLOBAL_RELEASE_NUMBER" >> control
+ echo "Priority: optional" >> control
+ echo "Architecture: $ARCH" >> control
+ echo "Depends: $PDEPS" >> control
+ echo "Installed-Size: $SIZE" >> control
+ echo -n "Maintainer: " >> control
+ echo $GLOBAL_MAINTAINER >> control
+ echo "Description: The $PNAME package provides part of a parallel mono" >> control
+ echo " environment that won't get in the way of your system installed mono." >> control
+
+
+ mkdir -p debian/DEBIAN
+ mv control debian/DEBIAN/.
+ 
+ pushd debian
+ tar -psxf ../data.tar.gz 
+ popd
+
+ find ./debian -type d |xargs chmod 755
+
+ dpkg-deb --build debian ~/archives/
+
+ popd
 
 }
 

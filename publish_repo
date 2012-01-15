@@ -1,10 +1,13 @@
 #!/bin/bash
+set -e
 
 cd repo
+
+rm -rf pmono
 mkdir -p pmono
-find ../archives/ -name '*.deb' -type f -exec mv '{}' pmono/.;
+
+find ../archives/ -name '*.deb' -type f -exec mv '{}' pmono/. \;
 
 dpkg-scanpackages . /dev/null |gzip -9c > Packages.gz
 
-
-
+scp -r Packages.gz pmono bredroll@void.printf.net:public_html/pmono/.
