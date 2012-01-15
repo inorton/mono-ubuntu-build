@@ -6,10 +6,8 @@ cd gtk-sharp-2.12.11
 ./configure --prefix=$MONO_PREFIX
 make
 
-PNAME=pmono-gtk-sharp2
-PVERS=2.12.11
-PDEPS=pmono-mono,libgtk2.0-dev
-
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+export PNAME=pmono-gtk-sharp2
+export PVERS=2.12.11
+export PDEPS=pmono-mono,libgtk2.0-dev
 
 set +e

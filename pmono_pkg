@@ -18,13 +18,13 @@ function pmono_deb {
  sudo rm -rf ~/tmp/pmono_pkg/
  mkdir -p ~/tmp/pmono_pkg/
 
- BEFORESIZE=`du -s -m $MONO_PREFIX|cut -d \/ -f 1`
+ BEFORESIZE=`du -s -k $MONO_PREFIX|cut -d \/ -f 1`
 
  perl ~/dir_changes $MONO_PREFIX ~/tmp/pmono_pkg/data.tar sudo -E make install
  perl ~/dir_changes /usr/local ~/tmp/pmono_pkg/data.tar sudo -E make install
 
 
- AFTERSIZE=`du -s -m $MONO_PREFIX|cut -d \/ -f 1`
+ AFTERSIZE=`du -s -k $MONO_PREFIX|cut -d \/ -f 1`
 
  SIZE=$(($AFTERSIZE-$BEFORESIZE))
 

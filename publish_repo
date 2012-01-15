@@ -8,6 +8,6 @@ mkdir -p pmono
 
 find ../archives/ -name '*.deb' -type f -exec mv '{}' pmono/. \;
 
-dpkg-scanpackages . /dev/null |gzip -9c > Packages.gz
-
 scp -r Packages.gz pmono bredroll@void.printf.net:public_html/pmono/.
+
+ssh bredroll@void.printf.net "cd public_html/pmono; dpkg-scanpackages . /dev/null |gzip -9c > Packages.gz"

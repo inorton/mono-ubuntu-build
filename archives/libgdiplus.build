@@ -6,10 +6,8 @@ cd libgdiplus-2.10
 ./configure --prefix=$MONO_PREFIX
 make
 
-PNAME=pmono-libgdiplus
-PVERS=2.10
-PDEPS=libjpeg62,libpng12-0,libcairo2,libfreetype6,libpcre3
-
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+export PNAME=pmono-libgdiplus
+export PVERS=2.10
+export PDEPS=libjpeg62,libpng12-0,libcairo2,libfreetype6,libpcre3
 
 set +e

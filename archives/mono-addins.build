@@ -5,10 +5,9 @@ tar -xf "$ARCHIVE_DIR/$ARCHIVE"
 cd mono-addins-0.6.2
 ./configure --prefix=$MONO_PREFIX
 
-PNAME=pmono-mono-addins
-PVERS=0.6.2
-PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-mono-tools
+export PNAME=pmono-mono-addins
+export PVERS=0.6.2
+export PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-mono-tools
 
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
 
 set +e

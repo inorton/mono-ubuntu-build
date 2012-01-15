@@ -6,10 +6,8 @@ cd mono-debugger-2.10
 ./configure --prefix=$MONO_PREFIX
 make
 
-PNAME=pmono-mono-debugger
-PVERS=2.10
-PDEPS=pmono-mono
-
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+export PNAME=pmono-mono-debugger
+export PVERS=2.10
+export PDEPS=pmono-mono
 
 set +e

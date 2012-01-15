@@ -6,10 +6,8 @@ cd gnome-desktop-sharp-2.24.0
 ./configure --prefix=$MONO_PREFIX
 make
 
-PNAME=pmono-gnome-desktop-sharp2
-PVERS=2.24.0
-PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev
-
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+export PNAME=pmono-gnome-desktop-sharp2
+export PVERS=2.24.0
+export PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev
 
 set +e

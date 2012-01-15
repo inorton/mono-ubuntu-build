@@ -6,10 +6,8 @@ cd mono-2.10.6
 ./configure --prefix=$MONO_PREFIX
 make
 
-PNAME=pmono-mono
-PVERS=2.10.6
-PDEPS=pmono-libgdiplus
-
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+export PNAME=pmono-mono
+export PVERS=2.10.6
+export PDEPS=pmono-libgdiplus
 
 set +e
