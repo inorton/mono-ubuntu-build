@@ -11,7 +11,7 @@ my @changed_files = ();
 sub add_to_tar {
 	my $tarfile = shift;
 	my $file = shift;
-	ensure_run("tar","--no-recursion","-pscazf",$tarfile, $file );
+	ensure_run("tar","--no-recursion","--append","-psf",$tarfile, $file );
 }
 
 sub new_file {
@@ -29,12 +29,14 @@ sub modified_file {
 sub process_file {
 	my $fn = $File::Find::name;
 	my $time = ctime(stat($fn)->mtime);
-	if ( exists $times{$fn} ){
-		if ( $times{$fn} ne $time ){
-			modified_file($fn);
+	unless ( -d $fn ){
+		if ( exists $times{$fn} ){
+			if ( $times{$fn} ne $time ){
+				modified_file($fn);
+			}
+		} else {
+			new_file($fn,$time);
 		}
-	} else {
-		new_file($fn,$time);
 	}
 }
 

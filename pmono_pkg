@@ -15,12 +15,14 @@ function pmono_deb {
 
  ARCH=`dpkg-architecture -qDEB_HOST_ARCH`
 
- rm -rf ~/tmp/pmono_pkg/
+ sudo rm -rf ~/tmp/pmono_pkg/
  mkdir -p ~/tmp/pmono_pkg/
 
  BEFORESIZE=`du -s -m $MONO_PREFIX|cut -d \/ -f 1`
 
- perl ~/dir_changes $MONO_PREFIX ~/tmp/pmono_pkg/data.tar.gz sudo -E make install
+ perl ~/dir_changes $MONO_PREFIX ~/tmp/pmono_pkg/data.tar sudo -E make install
+ perl ~/dir_changes /usr/local ~/tmp/pmono_pkg/data.tar sudo -E make install
+
 
  AFTERSIZE=`du -s -m $MONO_PREFIX|cut -d \/ -f 1`
 
@@ -44,10 +46,10 @@ function pmono_deb {
  mv control debian/DEBIAN/.
  
  pushd debian
- tar -psxf ../data.tar.gz 
+ sudo tar -psxf ../data.tar
  popd
 
- find ./debian -type d |xargs chmod 755
+ find ./debian -type d | sudo xargs chmod 755
 
  dpkg-deb --build debian ~/archives/
 
