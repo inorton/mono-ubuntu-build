@@ -15,20 +15,20 @@ function pmono_deb {
 
  ARCH=`dpkg-architecture -qDEB_HOST_ARCH`
 
- sudo rm -rf ~/tmp/pmono_pkg/
- mkdir -p ~/tmp/pmono_pkg/
+ sudo rm -rf $BUILD_TOOL_PATH/tmp/pmono_pkg/
+ mkdir -p $BUILD_TOOL_PATH/tmp/pmono_pkg/
 
  BEFORESIZE=`du -s -k $MONO_PREFIX|cut -d \/ -f 1`
 
- perl ~/dir_changes $MONO_PREFIX ~/tmp/pmono_pkg/data.tar sudo -E make install
- perl ~/dir_changes /usr/local ~/tmp/pmono_pkg/data.tar sudo -E make install
+ perl $BUILD_TOOL_PATH/dir_changes $MONO_PREFIX $BUILD_TOOL_PATH/tmp/pmono_pkg/data.tar sudo -E make install
+ perl $BUILD_TOOL_PATH/dir_changes /usr/local $BUILD_TOOL_PATH/tmp/pmono_pkg/data.tar sudo -E make install
 
 
  AFTERSIZE=`du -s -k $MONO_PREFIX|cut -d \/ -f 1`
 
  SIZE=$(($AFTERSIZE-$BEFORESIZE))
 
- pushd ~/tmp/pmono_pkg
+ pushd $BUILD_TOOL_PATH/tmp/pmono_pkg
 
  echo "Package: $PNAME" > control
  echo "Version: $PVERS-$GLOBAL_RELEASE_NUMBER" >> control
@@ -51,7 +51,7 @@ function pmono_deb {
 
  find ./debian -type d | sudo xargs chmod 755
 
- dpkg-deb --build debian ~/archives/
+ dpkg-deb --build debian $BUILD_TOOL_PATH/archives/
 
  popd
 
