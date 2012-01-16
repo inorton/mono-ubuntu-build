@@ -6,8 +6,9 @@ cd repo
 rm -rf pmono
 mkdir -p pmono
 
+set +e
 find ../archives/ -name '*.deb' -type f -exec mv '{}' pmono/. \;
+set -e
 
-scp -r Packages.gz pmono bredroll@void.printf.net:public_html/pmono/.
-
+scp -r pmono bredroll@void.printf.net:public_html/pmono/.
 ssh bredroll@void.printf.net "cd public_html/pmono; dpkg-scanpackages . /dev/null |gzip -9c > Packages.gz"

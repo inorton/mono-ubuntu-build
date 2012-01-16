@@ -1,9 +1,17 @@
 #!/bin/bash
 set -e
 
-tar -xf "$ARCHIVE_DIR/$ARCHIVE"
+if [ "x" == "x$NO_BUILD" ] 
+then
+
+	tar -xf "$ARCHIVE_DIR/$ARCHIVE"
+fi
 cd mono-addins-0.6.2
-./configure --prefix=$MONO_PREFIX
+
+if [ "x" == "x$NO_BUILD" ] 
+then
+	./configure --prefix=$MONO_PREFIX
+fi
 
 export PNAME=pmono-mono-addins
 export PVERS=0.6.2

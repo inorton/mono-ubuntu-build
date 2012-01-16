@@ -1,10 +1,18 @@
 #!/bin/bash
 set -e
 
-tar -xf $ARCHIVE_DIR/$ARCHIVE
+if [ "x" == "x$NO_BUILD" ] 
+then
+	tar -xf $ARCHIVE_DIR/$ARCHIVE
+fi
+
 cd mono-2.10.6
-./configure --prefix=$MONO_PREFIX
-make
+
+if [ "x" == "x$NO_BUILD" ] 
+then
+	./configure --prefix=$MONO_PREFIX
+	make
+fi
 
 export PNAME=pmono-mono
 export PVERS=2.10.6

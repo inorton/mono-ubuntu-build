@@ -1,14 +1,20 @@
 #!/bin/bash
 set -e
-tar -xf "$ARCHIVE_DIR/$ARCHIVE"
+if [ "x" == "x$NO_BUILD" ] 
+then
+	tar -xf "$ARCHIVE_DIR/$ARCHIVE"
+fi
+
 cd mono-tools-2.10
-./configure --prefix=$MONO_PREFIX
-make
+
+if [ "x" == "x$NO_BUILD" ] 
+then
+	./configure --prefix=$MONO_PREFIX
+	make
+fi
 
 PNAME=pmono-mono-tools
 PVERS=2.10
 PDEPS=pmono-mono,pmono-gtk-sharp2
-
-../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
 
 set +e
