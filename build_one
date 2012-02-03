@@ -1,0 +1,18 @@
+#!/bin/bash
+
+fetch=$1
+
+source $fetch
+
+set +e
+
+if [ "x" != "x$SKIP_FETCH" ]; then
+	echo "Skip fetching $ARCHIVE"
+else
+	echo "Fetch $ARCHIVE .. "
+	bash $BUILD_TOOL_PATH/fetch_archive
+fi
+
+set -e
+
+bash $BUILD_TOOL_PATH/build_archive	

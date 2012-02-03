@@ -2,12 +2,12 @@
 set -e
 
 tar -xf $ARCHIVE_DIR/$ARCHIVE
-cd monodevelop-2.8.5.1
+cd monodevelop-2.8.6.3
 ./configure --prefix=$MONO_PREFIX
 make
 
 PNAME=pmono-monodevelop
-PVERS=2.8.5.1
+PVERS=2.8.6.3
 PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev,pmono-gnome-desktop-sharp2,pmono-mono-addins,pmono-mono-tools
 
 ../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 

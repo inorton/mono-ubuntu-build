@@ -13,20 +13,6 @@ echo "SOURCE_DIR=$SOURCE_DIR"
 
 for fetch in $ARCHIVE_DIR/*.get
 do
-	source $fetch
-
-	set +e
-
-	if [ "x" != "x$SKIP_FETCH" ]; then
-		echo "Skip fetching $ARCHIVE"
-	else
-		echo "Fetch $ARCHIVE .. "
-		bash $BUILD_TOOL_PATH/fetch_archive
-	fi
-
-	set -e
-
- 	bash $BUILD_TOOL_PATH/build_archive	
-
+	bash $BUILD_TOOL_PATH/build_one $fetch
 done
 

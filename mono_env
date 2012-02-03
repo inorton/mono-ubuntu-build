@@ -28,3 +28,11 @@ export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
 ## you might like to uncomment these
 export MONO_GAC_PREFIX=$MONO_PREFIX
 
+export BUILD_TOOL_PATH=`pwd`
+export SOURCE_DIR="$BUILD_TOOL_PATH/sources"
+export ARCHIVE_DIR="$BUILD_TOOL_PATH/archives"
+
+export GLOBAL_MAINTAINER='Ian Norton <inorton@gmail.com>'
+export GLOBAL_RELEASE_NUMBER=6
+
+set +e

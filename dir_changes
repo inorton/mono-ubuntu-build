@@ -48,30 +48,42 @@ sub ensure_run {
 	}
 }
 
-my @args = @ARGV;
-my $dir = shift @args;
-my $tarfile = shift @args;
-my @cmd = @args;
+sub run()
+{
+	my @args = @ARGV;
+	my $dir = shift @args;
+	my $tarfile = shift @args;
+	my @cmd = @args;
 
-if ( $dir =~ /^-h|^--help/ ){
-	die "Usage: $0 TARGETDIR TARFILE COMMAND..\n";
+	if ( $dir =~ /^-h|^--help/ ){
+		die "Usage: $0 TARGETDIRs TARFILE COMMAND..\n";
+	}
+
+	my @dirs = split(/,/,$dir);
+
+	foreach my $dir ( @dirs ){
+		find(\&process_file, $dir );
+	}
+
+	@new_files = ();
+	@changed_files = ();
+
+	ensure_run(@cmd);
+
+	foreach my $dir ( @dirs ){
+		find(\&process_file, $dir );
+	}
+
+	foreach my $fn ( sort @new_files ) {
+		print "NEW $fn\n";
+		add_to_tar($tarfile,$fn);
+	}
+
+	foreach my $fn ( sort @changed_files ) {
+		print "MOD $fn\n";
+		add_to_tar($tarfile,$fn);
+	}
+	
 }
 
-find(\&process_file, $dir );
-
-@new_files = ();
-@changed_files = ();
-
-ensure_run(@cmd);
-
-find(\&process_file, $dir );
-
-foreach my $fn ( sort @new_files ) {
-	print "NEW $fn\n";
-	add_to_tar($tarfile,$fn);
-}
-
-foreach my $fn ( sort @changed_files ) {
-	print "MOD $fn\n";
-	add_to_tar($tarfile,$fn);
-}
+run();

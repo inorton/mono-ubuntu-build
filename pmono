@@ -30,4 +30,6 @@ export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
 ## you might like to comment these
 export MONO_GAC_PREFIX=$MONO_PREFIX
 
+set +e
+
 exec $1

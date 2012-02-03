@@ -11,6 +11,7 @@ cd mono-addins-0.6.2
 if [ "x" == "x$NO_BUILD" ] 
 then
 	./configure --prefix=$MONO_PREFIX
+	make
 fi
 
 export PNAME=pmono-mono-addins

@@ -12,13 +12,5 @@ sudo mkdir -p $MONO_PREFIX
 
 source mono_env $MONO_PREFIX
 
-export BUILD_TOOL_PATH=`pwd`
-export SOURCE_DIR="$BUILD_TOOL_PATH/sources"
-export ARCHIVE_DIR="$BUILD_TOOL_PATH/archives"
-
-
-export GLOBAL_MAINTAINER='Ian Norton <inorton@gmail.com>'
-export GLOBAL_RELEASE_NUMBER=5
-
 $BUILD_TOOL_PATH/build_sources
 

@@ -20,9 +20,7 @@ function pmono_deb {
 
  BEFORESIZE=`du -s -k $MONO_PREFIX|cut -d \/ -f 1`
 
- perl $BUILD_TOOL_PATH/dir_changes $MONO_PREFIX $BUILD_TOOL_PATH/tmp/pmono_pkg/data.tar sudo -E make install
- perl $BUILD_TOOL_PATH/dir_changes /usr/local $BUILD_TOOL_PATH/tmp/pmono_pkg/data.tar sudo -E make install
-
+ perl $BUILD_TOOL_PATH/dir_changes $MONO_PREFIX,/usr/local $BUILD_TOOL_PATH/tmp/pmono_pkg/data.tar sudo -E make install
 
  AFTERSIZE=`du -s -k $MONO_PREFIX|cut -d \/ -f 1`
 

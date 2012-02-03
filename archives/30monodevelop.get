@@ -1,3 +1,3 @@
-export URL=http://download.mono-project.com/sources/monodevelop/monodevelop-2.8.5.1.tar.bz2
-export ARCHIVE=monodevelop-2.8.5.1.tar.bz2
+export URL=http://download.mono-project.com/sources/monodevelop/monodevelop-2.8.6.3.tar.bz2
+export ARCHIVE=monodevelop-2.8.6.3.tar.bz2
 export BUILD=monodevelop.build
