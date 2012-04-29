@@ -1,0 +1,11 @@
+--- monodevelop-2.9.5/Makefile.in	2012-04-24 20:12:26.000000000 +0100
++++ monodevelop-2.9.5-patch/Makefile.in	2012-04-29 22:16:39.000000000 +0100
+@@ -256,7 +256,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = ../external contrib src po man theme-icons build tests
++SUBDIRS = contrib src po man theme-icons build tests
+ 
+ #capture aclocal flags for autoreconf
+ ACLOCAL_AMFLAGS = $(ACLOCAL_FLAGS)

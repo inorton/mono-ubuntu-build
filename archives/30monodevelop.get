@@ -1,3 +1,14 @@
-export URL=http://download.mono-project.com/sources/monodevelop/monodevelop-2.9.5.tar.bz2
-export ARCHIVE=monodevelop-2.9.5.tar.bz2
+export URL=git://github.com/mono/monodevelop.git
+export ARCHIVE=monodevelop-2.9.5-branch
 export BUILD=monodevelop.build
+
+export NOFETCH=1
+
+pushd $ARCHIVE_DIR/../sources
+
+git clone git://github.com/mono/monodevelop.git
+cd monodevelop
+
+git checkout -b $ARCHIVE
+
+popd

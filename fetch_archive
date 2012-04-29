@@ -1,4 +1,9 @@
-set +e
-wget -nc $URL -O "$ARCHIVE_DIR/$ARCHIVE"
-set -e
+if [ "x$NOFETCH" == "x" ]
+then
+	echo "fetching $URL"
+	set +e
+	wget -nc $URL -O "$ARCHIVE_DIR/$ARCHIVE"
+	set -e
+fi
 
+unset NOFETCH

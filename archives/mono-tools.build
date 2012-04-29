@@ -2,14 +2,14 @@
 set -e
 if [ "x" == "x$NO_BUILD" ] 
 then
-	tar -xf "$ARCHIVE_DIR/$ARCHIVE"
+	unzip $ARCHIVE_DIR/$ARCHIVE
 fi
 
-cd mono-tools-2.11
+cd mono-mono-tools-3337801
 
 if [ "x" == "x$NO_BUILD" ] 
 then
-	./configure --prefix=$MONO_PREFIX
+	./autogen.sh --prefix=$MONO_PREFIX
 	make
 fi
 

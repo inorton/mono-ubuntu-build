@@ -1,9 +1,11 @@
 #!/bin/bash
 set -e
 
-tar -xf $ARCHIVE_DIR/$ARCHIVE
-cd monodevelop-2.9.5
-./configure --prefix=$MONO_PREFIX
+cd monodevelop
+#pushd contrib/Mono.Cecil/src
+#sn -k mono.snk
+#popd
+./configure --prefix=`pkg-config --variable=prefix mono` --profile=stable  
 make
 
 PNAME=pmono-monodevelop

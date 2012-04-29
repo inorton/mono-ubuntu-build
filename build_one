@@ -4,12 +4,17 @@ fetch=$1
 
 source $fetch
 
+echo ARCHIVE=$ARCHIVE
+
 set +e
 
 if [ "x" != "x$SKIP_FETCH" ]; then
 	echo "Skip fetching $ARCHIVE"
 else
-	echo "Fetch $ARCHIVE .. "
+	echo "Fetch $ARCHIVE from $URL "
+	export ARCHIVE
+	export URL
+	export BUILD
 	bash $BUILD_TOOL_PATH/fetch_archive
 fi
 
