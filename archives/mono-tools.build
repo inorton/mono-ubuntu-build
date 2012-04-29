@@ -5,7 +5,7 @@ then
 	tar -xf "$ARCHIVE_DIR/$ARCHIVE"
 fi
 
-cd mono-tools-2.10
+cd mono-tools-2.11
 
 if [ "x" == "x$NO_BUILD" ] 
 then
@@ -14,7 +14,7 @@ then
 fi
 
 PNAME=pmono-mono-tools
-PVERS=2.10
+PVERS=2.11
 PDEPS=pmono-mono,pmono-gtk-sharp2
 
 set +e

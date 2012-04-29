@@ -2,12 +2,12 @@
 set -e
 
 tar -xf $ARCHIVE_DIR/$ARCHIVE
-cd libgdiplus-2.10
+cd libgdiplus-2.10.9
 ./configure --prefix=$MONO_PREFIX
 make
 
 export PNAME=pmono-libgdiplus
-export PVERS=2.10
+export PVERS=2.10.9
 export PDEPS=libjpeg62,libpng12-0,libcairo2,libfreetype6,libpcre3
 
 set +e

@@ -1,3 +1,3 @@
-export ARCHIVE=libgdiplus-2.10.tar.bz2
+export ARCHIVE=libgdiplus-2.10.9.tar.bz2
 export URL=http://download.mono-project.com/sources/libgdiplus/$ARCHIVE 
 export BUILD=libgdiplus.build
