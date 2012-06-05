@@ -1,5 +1,5 @@
 export URL=git://github.com/mono/monodevelop.git
-export ARCHIVE=monodevelop-2.9.5-branch
+export ARCHIVE=3.0-series
 export BUILD=monodevelop.build
 
 export NOFETCH=1
