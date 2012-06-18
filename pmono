@@ -32,4 +32,4 @@ export MONO_GAC_PREFIX=$MONO_PREFIX
 
 set +e
 
-exec $1
+exec "$@"

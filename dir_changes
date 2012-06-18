@@ -11,7 +11,7 @@ my @changed_files = ();
 sub add_to_tar {
 	my $tarfile = shift;
 	my $file = shift;
-	ensure_run("tar","--exclude-from","/home/build/archives/exclude.list","--no-recursion","--append","-psf",$tarfile, $file );
+	ensure_run("tar","--exclude-from","$ENV{ARCHIVE_DIR}/exclude.list","--no-recursion","--append","-psf",$tarfile, $file );
 }
 
 sub new_file {
