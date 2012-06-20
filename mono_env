@@ -33,6 +33,6 @@ export SOURCE_DIR="$BUILD_TOOL_PATH/sources"
 export ARCHIVE_DIR="$BUILD_TOOL_PATH/archives"
 
 export GLOBAL_MAINTAINER='Ian Norton <inorton@gmail.com>'
-export GLOBAL_RELEASE_NUMBER=8
+export GLOBAL_RELEASE_NUMBER=9
 
 set +e
