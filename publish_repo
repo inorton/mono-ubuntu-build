@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+mkdir -p repo
 cd repo
 
 rm -rf pmono
