@@ -6,7 +6,7 @@ then
 	tar -xf $ARCHIVE_DIR/$ARCHIVE
 fi
 
-cd mono-2.11.1
+cd mono-2.11.4
 
 if [ "x" == "x$NO_BUILD" ] 
 then
