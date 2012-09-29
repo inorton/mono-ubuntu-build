@@ -7,7 +7,7 @@ cd monodevelop-debugger-gdb-3.0.4.7
 make
 
 export PNAME=pmono-monodevelop-debugger-gdb
-export PVERS=3.0.4.7
+export PVERS=3.0.4
 export PDEPS=pmono-monodevelop
 
 set +e
