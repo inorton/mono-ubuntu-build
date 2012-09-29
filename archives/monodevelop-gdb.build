@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+tar -xf $ARCHIVE_DIR/$ARCHIVE
+cd monodevelop-debugger-gdb-3.0.4.7
+./configure --prefix=$MONO_PREFIX
+make
+
+export PNAME=pmono-monodevelop-debugger-gdb
+export PVERS=3.0.4.7
+export PDEPS=pmono-monodevelop
+
+set +e
