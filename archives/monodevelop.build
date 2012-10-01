@@ -2,6 +2,10 @@
 set -e
 
 cd monodevelop
+set +e
+git submodule init
+git submodule update
+set -e
 ./configure --prefix=`pkg-config --variable=prefix mono` --profile=stable  
 make
 
