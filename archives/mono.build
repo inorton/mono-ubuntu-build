@@ -6,7 +6,7 @@ then
 	tar -xf $ARCHIVE_DIR/$ARCHIVE
 fi
 
-cd mono-2.11.4
+cd mono-3.0.0
 
 if [ "x" == "x$NO_BUILD" ] 
 then
@@ -15,7 +15,7 @@ then
 fi
 
 export PNAME=pmono-mono
-export PVERS=2.11.4
+export PVERS=3.0.0
 export PDEPS=pmono-libgdiplus
 
 set +e
