@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+cd fsharp
+./autogen.sh --prefix=`pkg-config --variable=prefix mono`  
+make
+
+PNAME=pmono-fsharp
+PVERS=3.0.4
+PDEPS=pmono-mono,pmono-mono-addins,pmono-mono-tools
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e
