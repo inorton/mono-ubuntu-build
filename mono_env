@@ -2,7 +2,6 @@
 
 MONO_PREFIX=$1
 
-set -e
 
 if [ ! -d "$MONO_PREFIX" ]; then
 
@@ -12,7 +11,7 @@ if [ ! -d "$MONO_PREFIX" ]; then
    if [ "/" != "/$MONO_PREFIX" ]; then
    	echo "MONO_PREFIX '$MONO_PREFIX' does not exist"
    fi
-   exit 1;
+   # exit 1;
 
 fi
 
@@ -35,4 +34,3 @@ export ARCHIVE_DIR="$BUILD_TOOL_PATH/archives"
 export GLOBAL_MAINTAINER='Ian Norton <inorton@gmail.com>'
 export GLOBAL_RELEASE_NUMBER=10
 
-set +e
