@@ -4,7 +4,7 @@ set -e
 cd ../sources/scripts
 
 PNAME=pmono-scripts
-PVERS=0.0.1
+PVERS=0.0.2
 PDEPS=pmono-mono
 
 set +e

@@ -5,7 +5,7 @@ then
 	unzip $ARCHIVE_DIR/$ARCHIVE
 fi
 
-cd mono-mono-tools-3337801
+cd mono-mono-tools-dfcee14
 
 if [ "x" == "x$NO_BUILD" ] 
 then
@@ -14,7 +14,7 @@ then
 fi
 
 PNAME=pmono-mono-tools
-PVERS=2.11
+PVERS=3.0-dfcee14
 PDEPS=pmono-mono,pmono-gtk-sharp2
 
 set +e

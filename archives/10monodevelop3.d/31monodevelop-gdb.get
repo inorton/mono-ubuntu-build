@@ -1,3 +1,3 @@
-export URL=http://download.mono-project.com/sources/monodevelop-debugger-gdb/monodevelop-debugger-gdb-3.0.4.7.tar.bz2
-ARCHIVE=monodevelop-debugger-gdb-3.0.4.7.tar.bz2
+export URL=http://download.mono-project.com/sources/monodevelop-debugger-gdb/monodevelop-debugger-gdb-3.1.1.tar.bz2
+ARCHIVE=monodevelop-debugger-gdb-3.1.1.tar.bz2
 export BUILD=monodevelop-gdb.build

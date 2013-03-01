@@ -1,5 +1,5 @@
 export URL=git://github.com/mono/monodevelop.git
-export ARCHIVE=monodevelop-3.0.4-branch
+export ARCHIVE=monodevelop-3.1.1
 export BUILD=monodevelop.build
 
 export NOFETCH=1
@@ -9,6 +9,6 @@ pushd $ARCHIVE_DIR/../sources
 git clone git://github.com/mono/monodevelop.git
 cd monodevelop
 
-git checkout -b $ARCHIVE
+git checkout $ARCHIVE
 
 popd
