@@ -11,8 +11,18 @@ fi
 echo "ARCHIVE_DIR=$ARCHIVE_DIR"
 echo "SOURCE_DIR=$SOURCE_DIR"
 
-for fetch in $ARCHIVE_DIR/*.get
+for grp in $ARCHIVE_DIR/*.d
 do
-	bash $BUILD_TOOL_PATH/build_one $fetch
+  echo +++++++++++++++++++++++++++++++++++
+  gname=`basename $grp`
+  echo "starting group : $gname"
+  echo -----------------------------------
+
+
+  for fetch in $grp/*.get
+  do
+     echo $fetch
+     bash $BUILD_TOOL_PATH/build_one $fetch
+  done
 done
 

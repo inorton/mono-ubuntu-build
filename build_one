@@ -14,6 +14,9 @@ else
 	echo "Fetch $ARCHIVE from $URL "
 	export ARCHIVE
 	export URL
+
+        GRP=`dirname $fetch`
+        BUILD=$GRP/$BUILD
 	export BUILD
 	bash $BUILD_TOOL_PATH/fetch_archive
 fi
