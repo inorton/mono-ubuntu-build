@@ -32,9 +32,5 @@ export SOURCE_DIR="$BUILD_TOOL_PATH/sources"
 export ARCHIVE_DIR="$BUILD_TOOL_PATH/archives"
 
 export GLOBAL_MAINTAINER='Ian Norton <inorton@gmail.com>'
-<<<<<<< HEAD
 export GLOBAL_RELEASE_NUMBER=12
-=======
-export GLOBAL_RELEASE_NUMBER=11
->>>>>>> a1f351c8d137308908c662431effdb7a26fd14c1
 
