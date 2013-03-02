@@ -7,12 +7,12 @@ source $fetch
 echo ARCHIVE=$ARCHIVE
 
 GRP=`dirname $fetch`
-BUILD=$ARCHIVE_DIR/../$GRP/$BUILD
-export BUILD
+GRP=`basename $GRP`
+BF=`basename $BUILD`
+export BUILD=$ARCHIVE_DIR/$GRP/$BF
 export ARCHIVE
 export URL
 
-echo "GRP=$GRP"
 echo "BUILD=$BUILD"
 
 set +e
