@@ -11,7 +11,7 @@ make
 
 PNAME=pmono-monodevelop
 PVERS=3.1.1
-PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev,pmono-gnome-desktop-sharp2,pmono-mono-addins,pmono-mono-tools
+PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev,pmono-gnome-desktop-sharp2,pmono-mono-addins
 
 ../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
 

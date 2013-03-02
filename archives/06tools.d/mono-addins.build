@@ -8,6 +8,8 @@ then
 fi
 cd mono-addins-0.6.2
 
+patch -p1 < ../mono-addins-0.6.2.patch
+
 if [ "x" == "x$NO_BUILD" ] 
 then
 	./configure --prefix=$MONO_PREFIX
