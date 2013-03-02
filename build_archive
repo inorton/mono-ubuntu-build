@@ -7,7 +7,7 @@ mkdir -p $SOURCE_DIR
 cd $SOURCE_DIR
 
 echo "build $ARCHIVE from $URL"
-
+echo "BUILD=$BUILD"
 source $BUILD
 
 ../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL

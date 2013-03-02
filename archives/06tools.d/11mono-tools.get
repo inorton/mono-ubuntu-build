@@ -1,3 +1,18 @@
-export ARCHIVE=dfcee14e96544554e5052cffd30dde74751b9b81
-export URL=https://github.com/mono/mono-tools/zipball/$ARCHIVE
+# this is roughly the 2.11.1 version
+export ARCHIVE=33378019191b3edd8e75de32f80c4462f2631b49
+export URL=git://github.com/mono/mono-tools.git
 export BUILD=mono-tools.build
+
+export NOFETCH=1
+
+pushd $ARCHIVE_DIR/../sources
+
+set +e
+git clone $URL mono-tools
+set -e
+
+cd mono-tools
+
+git checkout $ARCHIVE
+
+popd

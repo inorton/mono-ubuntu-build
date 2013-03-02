@@ -6,7 +6,9 @@ export NOFETCH=1
 
 pushd $ARCHIVE_DIR/../sources
 
-git clone git://github.com/mono/monodevelop.git
+set +e
+git clone $URL monodevelop
+set -e
 cd monodevelop
 
 git checkout $ARCHIVE

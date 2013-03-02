@@ -11,7 +11,14 @@ fi
 echo "ARCHIVE_DIR=$ARCHIVE_DIR"
 echo "SOURCE_DIR=$SOURCE_DIR"
 
-for grp in $ARCHIVE_DIR/*.d
+DIRS=$BUILD_GROUP
+
+if [ "x" == "x$BUILD_GROUP" ]
+then
+  DIRS=$ARCHIVE_DIR/*.d
+fi
+
+for grp in $DIRS
 do
   echo +++++++++++++++++++++++++++++++++++
   gname=`basename $grp`

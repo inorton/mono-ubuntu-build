@@ -1,20 +1,13 @@
 #!/bin/bash
 set -e
-if [ "x" == "x$NO_BUILD" ] 
-then
-	unzip $ARCHIVE_DIR/$ARCHIVE
-fi
 
-cd mono-mono-tools-dfcee14
+cd mono-tools
 
-if [ "x" == "x$NO_BUILD" ] 
-then
-	./autogen.sh --prefix=$MONO_PREFIX
-	make
-fi
+./autogen.sh --prefix=$MONO_PREFIX
+make
 
 PNAME=pmono-mono-tools
-PVERS=3.0-dfcee14
+PVERS=2.11
 PDEPS=pmono-mono,pmono-gtk-sharp2
 
 set +e

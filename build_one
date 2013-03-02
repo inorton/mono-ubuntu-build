@@ -6,18 +6,21 @@ source $fetch
 
 echo ARCHIVE=$ARCHIVE
 
+GRP=`dirname $fetch`
+BUILD=$ARCHIVE_DIR/../$GRP/$BUILD
+export BUILD
+export ARCHIVE
+export URL
+
+echo "GRP=$GRP"
+echo "BUILD=$BUILD"
+
 set +e
 
-if [ "x" != "x$SKIP_FETCH" ]; then
+if [ "x" != "x$NOFETCH" ]; then
 	echo "Skip fetching $ARCHIVE"
 else
 	echo "Fetch $ARCHIVE from $URL "
-	export ARCHIVE
-	export URL
-
-        GRP=`dirname $fetch`
-        BUILD=$GRP/$BUILD
-	export BUILD
 	bash $BUILD_TOOL_PATH/fetch_archive
 fi
 
