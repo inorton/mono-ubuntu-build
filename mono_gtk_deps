@@ -3,6 +3,7 @@ autoconf \
 libc6-dev \
 gcc \
 g++ \
+libtool \
 libjpeg62-dev \
 libgtk2.0-dev \
 libgnome-desktop-dev \

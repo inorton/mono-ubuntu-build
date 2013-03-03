@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+cd monodevelop
+set +e
+git submodule init
+git submodule update
+set -e
+./configure --prefix=`pkg-config --variable=prefix mono` --profile=stable  
+make
+
+PNAME=pmono-monodevelop4
+PVERS=4.0.0
+PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gtk-sharp3,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev,pmono-gnome-desktop-sharp2,pmono-mono-addins
+
+../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
+
+set +e

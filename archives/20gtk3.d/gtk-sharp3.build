@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+cd gtk-sharp-2-99
+
+if [ "x" == "x$NO_BUILD" ] 
+	then
+	./autogen.sh --prefix=$MONO_PREFIX
+	make
+fi
+
+export PNAME=pmono-gtk-sharp3
+export PVERS=2.99
+export PDEPS=pmono-mono,libgtk-3-0
+
+set +e

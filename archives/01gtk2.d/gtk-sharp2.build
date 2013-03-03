@@ -1,16 +1,11 @@
 #!/bin/bash
 set -e
 
-if [ "x" == "x$NO_BUILD" ] 
-then
-	tar -xf $ARCHIVE_DIR/$ARCHIVE
-fi
-
-cd gtk-sharp-2.12.11
+cd gtk-sharp-2-12
 
 if [ "x" == "x$NO_BUILD" ] 
 	then
-	./configure --prefix=$MONO_PREFIX
+	./bootstrap-2.12 --prefix=$MONO_PREFIX
 	make
 fi
 

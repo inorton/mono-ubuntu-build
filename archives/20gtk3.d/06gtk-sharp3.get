@@ -1,15 +1,15 @@
-ARCHIVE=gtk-sharp-2-12-branch
+ARCHIVE=master
 URL=https://github.com/mono/gtk-sharp.git
-BUILD=gtk-sharp2.build
+BUILD=gtk-sharp3.build
 
 export NOFETCH=1
 
 pushd $ARCHIVE_DIR/../sources
 
 set +e
-git clone $URL gtk-sharp-2-12
+git clone $URL gtk-sharp-2-99
 set -e
-cd gtk-sharp-2-12
+cd gtk-sharp-2-99
 
 git checkout $ARCHIVE
 
