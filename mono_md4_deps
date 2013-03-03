@@ -1,0 +1,21 @@
+sudo apt-get install \
+autoconf \
+libc6-dev \
+gcc \
+g++ \
+libtool \
+libjpeg62-dev \
+libgtk2.0-dev \
+libgtk-3-dev \
+libgnome-desktop-dev \
+libwnck-dev \
+libglade2-dev \
+libglademm-2.4-dev \
+libgnome2-dev \
+libgnomevfs2-dev \
+libgnomecanvas2-dev \
+libatk1.0-dev \
+libgnomeui-dev \
+libgtksourceview2.0-dev \
+librsvg2-dev \
+libgtkhtml3.14-dev
