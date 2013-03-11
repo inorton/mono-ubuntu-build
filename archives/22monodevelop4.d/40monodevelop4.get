@@ -1,6 +1,6 @@
 export URL=git://github.com/mono/monodevelop.git
 export ARCHIVE=master
-export BUILD=monodevelop.build
+export BUILD=monodevelop4.build
 
 export NOFETCH=1
 

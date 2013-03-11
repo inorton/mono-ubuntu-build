@@ -8,6 +8,6 @@ make
 
 export PNAME=pmono-monodevelop-debugger-gdb
 export PVERS=3.1.1
-export PDEPS=pmono-mono
+export PDEPS=pmono-mono pmono-monodevelop
 
 set +e
