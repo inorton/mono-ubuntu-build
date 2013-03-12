@@ -17,7 +17,7 @@ fi
 
 export PNAME=pmono-mono-addins
 export PVERS=0.6.2
-export PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-mono-tools
+export PDEPS=pmono-mono,pmono-gtk-sharp2
 
 
 set +e
