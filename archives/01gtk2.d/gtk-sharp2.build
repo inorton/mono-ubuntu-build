@@ -3,6 +3,8 @@ set -e
 
 cd gtk-sharp-2-12
 
+patch -p1 < ../gtk-sharp-2-12.patch
+
 if [ "x" == "x$NO_BUILD" ] 
 	then
 	./bootstrap-2.12 --prefix=$MONO_PREFIX
