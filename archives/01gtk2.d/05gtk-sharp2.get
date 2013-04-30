@@ -1,4 +1,4 @@
-ARCHIVE=gtk-sharp-2-12-branch
+ARCHIVE=2.12.21
 URL=https://github.com/mono/gtk-sharp.git
 BUILD=gtk-sharp2.build
 

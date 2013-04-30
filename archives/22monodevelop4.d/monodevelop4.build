@@ -10,7 +10,7 @@ set -e
 make
 
 PNAME=pmono-monodevelop
-PVERS=4.0.0
+PVERS=4.0.4
 PDEPS=pmono-mono,pmono-gtk-sharp2,pmono-gtk-sharp3,pmono-gnome-sharp2,libgtksourceview2.0-dev,libwnck-dev,librsvg2-dev,libgtkhtml3.14-dev,pmono-gnome-desktop-sharp2,pmono-mono-addins
 
 ../../pmono_pkg $PNAME $PVERS $PDEPS "$GLOBAL_MAINTAINER" $URL 
