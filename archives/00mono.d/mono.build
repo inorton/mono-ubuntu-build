@@ -1,16 +1,11 @@
 #!/bin/bash
 set -e
 
-if [ "x" == "x$NO_BUILD" ] 
-then
-	tar -xf $ARCHIVE_DIR/$ARCHIVE
-fi
-
-cd mono-3.0.10
+cd mono-master
 
 if [ "x" == "x$NO_BUILD" ] 
 then
-	./configure --prefix=$MONO_PREFIX
+	./autogen.sh --prefix=$MONO_PREFIX
 	make
 fi
 

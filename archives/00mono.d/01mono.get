@@ -1,3 +1,17 @@
-export ARCHIVE=mono-3.0.10.tar.bz2
-export URL=http://download.mono-project.com/sources/mono/$ARCHIVE
+export ARCHIVE=master
+export URL=https://github.com/mono/mono.git
 export BUILD=mono.build
+
+export NOFETCH=1
+
+pushd $ARCHIVE_DIR/../sources
+
+set +e
+git clone $URL mono-master
+set -e
+
+cd mono-master
+
+git checkout $ARCHIVE
+
+popd
