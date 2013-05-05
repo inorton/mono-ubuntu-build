@@ -3,14 +3,31 @@ set -e
 
 cd mono-master
 
-if [ "x" == "x$NO_BUILD" ] 
-then
-	./autogen.sh --prefix=$MONO_PREFIX
-	make
-fi
-
 export PNAME=pmono-mono
 export PVERS=3.0.10
 export PDEPS=pmono-libgdiplus
+
+
+if [ "x" == "x$NO_BUILD" ] 
+then
+
+        BOOTSTRAP=$HOME/mono-bootstrap
+
+	if [ ! -f $BOOTSTRAP/mono/bin/mono ]
+	then
+	        ## build mono 3.0.6 as a bootstrap
+        	rm -rf *
+	        git reset --hard
+        	git checkout mono-3.0.6
+	        ./autogen.sh --prefix=$BOOTSTRAP
+        	make 
+	        make install
+	fi
+	rm -rf *
+        git reset --hard
+        git checkout mono-$PVERS
+	./autogen.sh --prefix=$MONO_PREFIX
+	EXTERNAL_MCS=$BOOTSTRAP/mono/bin/mcs EXTERNAL_RUNTIME=$BOOTSTRAP/mono make
+fi
 
 set +e
