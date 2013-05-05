@@ -4,7 +4,6 @@ set -e
 mkdir -p repo
 cd repo
 
-rm -rf pmono
 mkdir -p pmono
 
 set +e
