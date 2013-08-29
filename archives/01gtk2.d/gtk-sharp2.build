@@ -12,7 +12,7 @@ if [ "x" == "x$NO_BUILD" ]
 fi
 
 export PNAME=pmono-gtk-sharp2
-export PVERS=2.12.21
+export PVERS=2.12.22
 export PDEPS=pmono-mono,libgtk2.0-dev
 
 set +e

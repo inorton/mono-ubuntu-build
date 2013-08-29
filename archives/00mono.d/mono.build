@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-cd mono-master
+cd mono-github
 
 export PNAME=pmono-mono
-export PVERS=3.0.10
+export PVERS=3.2.1
 export PDEPS=pmono-libgdiplus
 
 
