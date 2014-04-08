@@ -4,7 +4,7 @@ set -e
 cd mono-github
 
 export PNAME=pmono-mono
-export PVERS=3.4.0
+export PVERS=3.2.8
 export PDEPS=pmono-libgdiplus
 
 
