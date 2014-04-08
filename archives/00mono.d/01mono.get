@@ -9,15 +9,9 @@ pushd $ARCHIVE_DIR/../sources
 set +e
 git clone $URL mono-github
 set -e
-pushd mono-github
-set +e
-git pull
-set -e
-popd
-
 
 cd mono-github
-
+git pull
 git checkout $ARCHIVE
 
 popd

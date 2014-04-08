@@ -11,8 +11,8 @@ git clone $URL gtk-sharp-2-99
 set -e
 cd gtk-sharp-2-99
 
+git pull
 git checkout $ARCHIVE
-
 git reset --hard 05f67db2eec759bf398ded5937225f7b4631c5f8
 
 popd

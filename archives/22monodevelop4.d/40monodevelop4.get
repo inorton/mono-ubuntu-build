@@ -10,7 +10,7 @@ set +e
 git clone $URL monodevelop-master
 set -e
 cd monodevelop-master
-
+git pull
 git checkout $ARCHIVE
 
 popd
