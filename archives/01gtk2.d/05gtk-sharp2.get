@@ -10,7 +10,8 @@ set +e
 git clone $URL gtk-sharp-2-12
 set -e
 cd gtk-sharp-2-12
-git pull
+git reset --hard
+git pull origin master
 git checkout $ARCHIVE
 
 popd

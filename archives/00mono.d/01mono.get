@@ -11,7 +11,8 @@ git clone $URL mono-github
 set -e
 
 cd mono-github
-git pull
+git reset --hard
+git pull origin master
 git checkout $ARCHIVE
 
 popd
