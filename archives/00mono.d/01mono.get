@@ -1,4 +1,4 @@
-export ARCHIVE=mono-3.2.8
+export ARCHIVE=mono-3.4.0
 export URL=https://github.com/mono/mono.git
 export BUILD=mono.build
 
@@ -9,6 +9,12 @@ pushd $ARCHIVE_DIR/../sources
 set +e
 git clone $URL mono-github
 set -e
+pushd mono-github
+set +e
+git pull
+set -e
+popd
+
 
 cd mono-github
 
