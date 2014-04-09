@@ -3,3 +3,6 @@ all:
 
 repo: 
 	bash publish_repo
+
+clean:
+	rm -rf /opt/mono;rm -rf *;git reset --hard
